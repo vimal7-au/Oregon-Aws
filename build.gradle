@@ -1,16 +1,24 @@
 defaultTasks 'clean', 'build'
 
+
+
 buildscript {
 	ext {
 
 	}
 	repositories {
+        maven { url "https://mavenrepository.int.corp.sun/content/repositories/inhouse" }
+        maven { url "https://mavenrepository.int.corp.sun/content/repositories/inhouse.snapshot" }
+        maven { url "https://mavenrepository.int.corp.sun/content/repositories/central/" }
+        maven { url "https://mavenrepository.int.corp.sun/content/groups/public/" }
+
         maven {
             url "https://plugins.gradle.org/m2/"
         }
 		mavenCentral()
 		mavenLocal()
 	}
+
 	dependencies {
 	}
 }
@@ -25,6 +33,10 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
+    maven { url "https://mavenrepository.int.corp.sun/content/repositories/inhouse" }
+    maven { url "https://mavenrepository.int.corp.sun/content/repositories/inhouse.snapshot" }
+    maven { url "https://mavenrepository.int.corp.sun/content/repositories/central/" }
+    maven { url "https://mavenrepository.int.corp.sun/content/groups/public/" }
 
   	mavenCentral()
 	mavenLocal()
@@ -32,9 +44,11 @@ repositories {
 
 dependencies {
     compile (
-            'com.amazonaws:aws-lambda-java-core:1.1.0',
-            'com.amazonaws:aws-lambda-java-events:1.1.0'
+            'com.amazonaws:aws-lambda-java-events:1.1.0',
+            'com.amazonaws:aws-java-sdk-kinesis:1.11.345'
     )
+    compile group: 'com.amazonaws', name: 'aws-lambda-java-core', version: '1.2.0'
+
 }
 
 
