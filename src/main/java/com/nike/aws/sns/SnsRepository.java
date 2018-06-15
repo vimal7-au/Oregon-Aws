@@ -9,16 +9,12 @@ public class SnsRepository extends SnsBaseRepository {
         super();
     }
 
-
     public void publish() {
         String topicArn = "";
         String message = "";
-
         PublishRequest publishRequest = new PublishRequest(topicArn, message);
         PublishResult publishResult = amazonSNSClient.publish(publishRequest);
 
-
     }
-
 
 }
