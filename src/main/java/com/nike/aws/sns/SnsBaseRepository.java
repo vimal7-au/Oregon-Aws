@@ -20,4 +20,6 @@ public class SnsBaseRepository {
         AmazonSNSClientBuilder.standard().withRegion(Regions.US_WEST_2).setCredentials(awsCredentialsProvider);
     }
 
+
+
 }
